@@ -4,13 +4,13 @@
 
 > Para criar um aplicativo Next, abra seu terminal, navegue em qualquer pasta desejada e digite:
 
-```
+```shell
 $ npx create-next-app@latest nextjsdockerenvprod
 ```
 
 >> Opções seguintes selecionadas
 
-```
+```shell
 ✔ What is your project named? … nextjsdockerenvprod
 ✔ Would you like to use TypeScript? … No / Yes
 ✔ Would you like to use ESLint? … No / Yes
@@ -30,19 +30,18 @@ $ npx create-next-app@latest nextjsdockerenvprod
 
 > Agora podemos encaixar o aplicativo Next.js. Abra o arquivo chamado next.config.js e substitua o conteúdo por este:
 
-```
+```js
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'standalone'
 }
 
 module.exports = nextConfig
-
 ```
 
 > .dockerignore: Crie um arquivo chamado .dockerignore e adicione este conteúdo.
 
-```
+```shell
 Dockerfile
 .dockerignore
 node_modules
@@ -58,7 +57,7 @@ README.md
 
 > Na raiz do projeto, crie um arquivo chamado Dockerfile e adicione este conteúdo:
 
-```
+```yml
 FROM node:18-alpine AS base
 
 # Instale dependências somente quando necessário
@@ -130,7 +129,7 @@ CMD ["node", "server.js"]
 
 ### Execução do Dockerfile
 
-```
+```shell
 $ docker build -t nextjs-docker-env-prod .
 $ docker run -d nextjs-docker-env-prod
 $ docker run -d -p 3000:3000 nextjs-docker-env-prod
@@ -139,7 +138,7 @@ $ docker run -dp 127.0.0.1:3000:3000 nextjs-docker-env-prod
 
 > Crie um arquivo chamado docker-compose.yml e adicione este conteúdo
 
-```
+```yml
 version: '3.9'
 
 services:
@@ -155,13 +154,13 @@ services:
 
 > Construa a imagem do Docker
 
-```
+```shell
 $ docker compose build
 ```
 
 > Em seguida, execute os serviços
 
-```
+```shell
 $ docker compose up 
 ```
 
