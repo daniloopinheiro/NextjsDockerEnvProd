@@ -24,7 +24,7 @@ $ npx create-next-app@latest nextjsdockerenvprod
 
 > E se você visitar localhost:3000, verá o aplicativo Next.js em execução.
 
-![Alt text](./nextjsdockerenvprod/assets/image.png)
+![Alt text](./assets/image.png)
 
 ## Dockerize o aplicativo Next.js
 
